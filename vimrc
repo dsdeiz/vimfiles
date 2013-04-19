@@ -149,9 +149,6 @@ nnoremap <Leader>ev :e $MYVIMRC<CR>
   inoremap <expr><C-y>  neocomplcache#close_popup()
   inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
-  " Temporary
-  let g:UltiSnipsExpandTrigger="<c-s-tab>"
-
   " }}}
 
 " }}}
