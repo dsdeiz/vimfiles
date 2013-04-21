@@ -103,6 +103,12 @@ nnoremap <Leader>ev :e $MYVIMRC<CR>
 
 " }}}
 
+" Autocommand settings {{{
+
+autocmd VimLeave * mks! ~/.vim/session.vim
+
+" }}}
+
 " Plugin settings {{{
 
   " Ack {{{
@@ -130,24 +136,6 @@ nnoremap <Leader>ev :e $MYVIMRC<CR>
   " CtrlP {{{
 
   let g:ctrlp_working_path_mod='rw'
-
-  " }}}
-
-  " neocomplcache {{{
-
-  inoremap <expr><C-g>     neocomplcache#undo_completion()
-  inoremap <expr><C-l>     neocomplcache#complete_common_string()
-
-  " Recommended key-mappings.
-  " <CR>: close popup and save indent.
-  inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
-  " <TAB>: completion.
-  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-  " <C-h>, <BS>: close popup and delete backword char.
-  inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-  inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-  inoremap <expr><C-y>  neocomplcache#close_popup()
-  inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
   " }}}
 

@@ -1,3 +1,3 @@
 set guioptions=Aci
-set guifont=Andale\ Mono:h14
+set guifont=Envy\ Code\ R:h14
 colorscheme jellybeans
