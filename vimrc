@@ -27,7 +27,18 @@ set colorcolumn=80
 
 set laststatus=2
 set list
-set listchars=tab:»\ ,trail:·
+" set listchars=tab:»\ ,trail:·
+" From vim-sensible.
+if &encoding ==# 'latin1' && has('gui_running')
+  set encoding=utf-8
+endif
+
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+  if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
+    let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
+  endif
+endif
 
 set shiftwidth=2
 set expandtab
