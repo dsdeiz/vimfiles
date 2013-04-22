@@ -143,10 +143,10 @@ autocmd VimLeave * mks! ~/.vim/session.vim
 
 " Sessions {{{
 
-set ssop-=options
-set ssop-=buffers
-set ssop-=help
-set ssop-=blank
+set sessionoptions-=options
+set sessionoptions-=buffers
+set sessionoptions-=help
+set sessionoptions-=blank
 
 " }}}
 
