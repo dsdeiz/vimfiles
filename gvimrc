@@ -1,3 +1,3 @@
 set guioptions=Aci
-set guifont=Liberation\ Mono:h13
+set guifont=Andale\ Mono:h14
 colorscheme railscasts
