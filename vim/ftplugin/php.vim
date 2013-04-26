@@ -1,4 +1,4 @@
-" setlocal formatoptions=croq
+setlocal keywordprg=pman\ -P\ cat
 setlocal suffixesadd=.inc,.module,.install,.engine,.theme
 
 " ft-php-indent options
