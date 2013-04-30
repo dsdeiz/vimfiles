@@ -6,14 +6,12 @@ filetype plugin indent on
 
 syntax on
 
-set backspace=indent,eol,start
 set vb t_vb=
 set mouse=a
 
 set fileformats=unix,dos
 set fileformat=unix
 
-set wildmenu
 set wildmode=list:longest,full
 set wildignore=*.png,*.jpg,*.jpeg,*.gif,*.swp,*.swo,sites/default/files/**,.git
 
@@ -25,37 +23,18 @@ set colorcolumn=80
 
 " Layout settings {{{
 
-set laststatus=2
 set list
-" set listchars=tab:»\ ,trail:·
-" From vim-sensible.
-if &encoding ==# 'latin1' && has('gui_running')
-  set encoding=utf-8
-endif
-
-if &listchars ==# 'eol:$'
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-  if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
-    let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
-  endif
-endif
 
 set shiftwidth=2
 set expandtab
 set softtabstop=2
 set tabstop=2
-set autoindent
 
 set ignorecase
 
 set number
-set nohlsearch
-set incsearch
-set showcmd
-set ruler
 set mousehide
 set nocul
-set complete-=i
 set complete-=b
 set complete-=u
 set complete-=w
