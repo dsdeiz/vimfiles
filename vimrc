@@ -125,7 +125,7 @@ autocmd VimLeave * mks! ~/.vim/session.vim
 
   " CtrlP {{{
 
-  let g:ctrlp_working_path_mod='rw'
+  let g:ctrlp_working_path_mode='r'
 
   " }}}
 
