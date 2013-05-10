@@ -104,7 +104,9 @@ autocmd VimLeave * mks! ~/.vim/session.vim
   " Syntastic {{{
 
   let g:syntastic_auto_loc_list=1
-  let g:syntastic_php_checkers=['php']
+  let g:syntastic_php_checkers=['php', 'phpcs']
+  let g:syntastic_php_phpcs_args="--standard=Drupal --extensions=php,module,inc,install,test,profile,theme --report=csv"
+  let g:syntastic_quiet_warnings=1
 
   " }}}
 
