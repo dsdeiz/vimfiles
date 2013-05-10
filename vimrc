@@ -101,9 +101,22 @@ autocmd VimLeave * mks! ~/.vim/session.vim
 
 " Plugin settings {{{
 
+  " Syntastic {{{
+
+  let g:syntastic_auto_loc_list=1
+  let g:syntastic_php_checkers=['php']
+
+  " }}}
+
   " Ack {{{
 
   let g:ackprg="ack -H --nocolor --nogroup --column"
+
+  " }}}
+
+  " Tagbar {{{
+
+  nnoremap <Leader>t :TagbarToggle<CR>
 
   " }}}
 

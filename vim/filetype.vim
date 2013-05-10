@@ -6,4 +6,5 @@ endif
 augroup filetypedetect
   au! BufRead,BufNewFile *.install setfiletype php
   au! BufRead,BufNewFile *.test setfiletype php
+  au! BufRead,BufNewFile *.inc setfiletype php
 augroup END
