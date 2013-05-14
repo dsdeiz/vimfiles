@@ -108,6 +108,9 @@ autocmd VimLeave * mks! ~/.vim/session.vim
   let g:syntastic_php_phpcs_args="--standard=Drupal --extensions=php,module,inc,install,test,profile,theme --report=csv"
   let g:syntastic_quiet_warnings=1
 
+  " Sometimes, I don't follow standards. :D
+  nnoremap <Leader>st :SyntasticToggleMode<CR>
+
   " }}}
 
   " Ack {{{
