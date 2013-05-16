@@ -77,7 +77,8 @@ nnoremap k gk
 
 map Y y$
 
-nnoremap <Leader>cd :cd $HOME/Sites<Enter>:cd 
+nnoremap <Leader>cd :cd $HOME/Sites<CR>:cd 
+nnoremap <Leader>cp :cd $HOME/Projects<CR>:cd 
 
 " A bit annoying.
 nnoremap q: <Nop>
