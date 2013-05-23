@@ -2239,3 +2239,477 @@ function `!v expand('%:t:r:r')`_file_insert($file) {
   ${1}
 }
 endsnippet
+
+snippet hook_file_update "hook_file_update"
+/**
+ * Implements hook_file_update().
+ */
+function `!v expand('%:t:r:r')`_file_update($file) {
+  ${1}
+}
+endsnippet
+
+snippet hook_file_copy "hook_file_copy"
+/**
+ * Implements hook_file_copy().
+ */
+function `!v expand('%:t:r:r')`_file_copy($file, $source) {
+  ${1}
+}
+endsnippet
+
+snippet hook_file_move "hook_file_move"
+/**
+ * Implements hook_file_move().
+ */
+function `!v expand('%:t:r:r')`_file_move($file, $source) {
+  ${1}
+}
+endsnippet
+
+snippet hook_file_delete "hook_file_delete"
+/**
+ * Implements hook_file_delete().
+ */
+function `!v expand('%:t:r:r')`_file_delete($file) {
+  ${1}
+}
+endsnippet
+
+snippet hook_file_download "hook_file_download"
+/**
+ * Implements hook_file_download().
+ */
+function `!v expand('%:t:r:r')`_file_download($uri) {
+  ${1}
+}
+endsnippet
+
+snippet hook_file_url_alter "hook_file_url_alter"
+/**
+ * Implements hook_file_url_alter().
+ */
+function `!v expand('%:t:r:r')`_file_url_alter(&$uri) {
+  ${1}
+}
+endsnippet
+
+snippet hook_requirements "hook_requirements"
+/**
+ * Implements hook_requirements().
+ */
+function `!v expand('%:t:r:r')`_requirements($phase) {
+  $requirements = array();
+
+  ${1}
+
+  return $requirements;
+}
+endsnippet
+
+snippet hook_schema "hook_schema"
+/**
+ * Implements hook_schema().
+ */
+function `!v expand('%:t:r:r')`_schema() {
+  return $schema;
+}
+endsnippet
+
+snippet hook_schema_alter "hook_schema_alter"
+/**
+ * Implements hook_schema_alter().
+ */
+function `!v expand('%:t:r:r')`_schema_alter(&$schema) {
+  ${1}
+}
+endsnippet
+
+snippet hook_query_alter "hook_query_alter"
+/**
+ * Implements hook_query_alter().
+ */
+function `!v expand('%:t:r:r')`_query_alter(QueryAlterableInterface $query) {
+  ${1}
+}
+endsnippet
+
+snippet hook_query_tag_alter "hook_query_TAG_alter"
+/**
+ * Implements hook_query_TAG_alter().
+ */
+function `!v expand('%:t:r:r')`_query_${1:tag}_alter(QueryAlterableInterface $query) {
+  ${2}
+}
+endsnippet
+
+snippet hook_install "hook_install"
+/**
+ * Implements hook_install().
+ */
+function `!v expand('%:t:r:r')`_install() {
+  ${1}
+}
+endsnippet
+
+snippet hook_update_n "hook_update_N"
+/**
+ * ${1}
+ */
+function `!v expand('%:t:r:r')`_update_{$2}(&$sandbox) {
+  ${3}
+}
+endsnippet
+
+snippet hook_update_dependencies "hook_update_dependencies"
+/**
+ * Implements hook_update_dependencies().
+ */
+function `!v expand('%:t:r:r')`_update_dependencies() {
+  ${1}
+
+  return $dependencies;
+}
+endsnippet
+
+snippet hook_update_last_removed "hook_update_last_removed"
+/**
+ * Implements hook_update_last_removed().
+ */
+function `!v expand('%:t:r:r')`_update_last_removed() {
+  return ${1};
+}
+endsnippet
+
+snippet hook_uninstall "hook_uninstall"
+/**
+ * Implements hook_uninstall().
+ */
+function `!v expand('%:t:r:r')`_uninstall() {
+  ${1}
+}
+endsnippet
+
+snippet hook_enable "hook_enable"
+/**
+ * Implements hook_enable().
+ */
+function `!v expand('%:t:r:r')`_enable() {
+  ${1}
+}
+endsnippet
+
+snippet hook_disable "hook_disable"
+/**
+ * Implements hook_disable().
+ */
+function `!v expand('%:t:r:r')`_disable() {
+  ${1}
+}
+endsnippet
+
+snippet hook_registry_files_alter "hook_registry_files_alter"
+/**
+ * Implements hook_registry_files_alter().
+ */
+function `!v expand('%:t:r:r')`_registry_files_alter(&$files, $modules) {
+  ${1}
+}
+endsnippet
+
+snippet hook_install_tasks "hook_install_tasks"
+/**
+ * Implements hook_install_tasks().
+ */
+function `!v expand('%:t:r:r')`_install_tasks() {
+  $tasks = array(
+    ${1}
+  );
+
+  return $tasks;
+}
+endsnippet
+
+snippet hook_drupal_goto_alter "hook_drupal_goto_alter"
+/**
+ * Implements hook_drupal_goto_alter().
+ */
+function `!v expand('%:t:r:r')`_drupal_goto_alter(&$path, &$options, &$http_response_code) {
+  ${1}
+}
+endsnippet
+
+snippet hook_html_head_alter "hook_html_head_alter"
+/**
+ * Implements hook_html_head_alter().
+ */
+function `!v expand('%:t:r:r')`_html_head_alter(&$head_elements) {
+  ${1}
+}
+endsnippet
+
+snippet hook_install_tasks_alter "hook_install_tasks_alter"
+/**
+ * Implements hook_install_tasks_alter().
+ */
+function `!v expand('%:t:r:r')`_install_tasks_alter(&$tasks, $install_state) {
+  ${1}
+}
+endsnippet
+
+snippet hook_file_mimetype_mapping_alter "hook_file_mimetype_mapping_alter"
+/**
+ * Implements hook_file_mimetype_mapping_alter().
+ */
+function `!v expand('%:t:r:r')`_file_mimetype_mapping_alter(&$mapping) {
+  ${1}
+}
+endsnippet
+
+snippet hook_action_info "hook_action_info"
+/**
+ * Implements hook_action_info().
+ */
+function `!v expand('%:t:r:r')`_action_info() {
+  return array(
+    ${1}
+  );
+}
+endsnippet
+
+snippet hook_actions_delete "hook_actions_delete"
+/**
+ * Implements hook_actions_delete().
+ */
+function `!v expand('%:t:r:r')`_actions_delete($aid) {
+  ${1}
+}
+endsnippet
+
+snippet hook_action_info_alter "hook_action_info_alter"
+/**
+ * Implements hook_action_info_alter().
+ */
+function `!v expand('%:t:r:r')`_action_info_alter(&$actions) {
+  ${1}
+}
+endsnippet
+
+snippet hook_archiver_info "hook_archiver_info"
+/**
+ * Implements hook_archiver_info().
+ */
+function `!v expand('%:t:r:r')`_archiver_info() {
+  return array(
+    ${1}
+  );
+}
+endsnippet
+
+snippet hook_archiver_info_alter "hook_archiver_info_alter"
+/**
+ * Implements hook_archiver_info_alter().
+ */
+function `!v expand('%:t:r:r')`_archiver_info_alter(&$info) {
+  ${1}
+}
+endsnippet
+
+snippet hook_date_format_types "hook_date_format_types"
+/**
+ * Implements hook_date_format_types().
+ */
+function `!v expand('%:t:r:r')`_date_format_types() {
+  return array(
+    ${1}
+  );
+}
+endsnippet
+
+snippet hook_date_format_types_alter "hook_date_format_types_alter"
+/**
+ * Implements hook_date_format_types_alter().
+ */
+function `!v expand('%:t:r:r')`_date_format_types_alter(&$types) {
+  ${1}
+}
+endsnippet
+
+snippet hook_date_formats "hook_date_formats"
+/**
+ * Implements hook_date_formats().
+ */
+function `!v expand('%:t:r:r')`_date_formats() {
+  return array(
+    ${1}
+  );
+}
+endsnippet
+
+snippet hook_date_formats_alter "hook_date_formats_alter"
+/**
+ * Implements hook_date_formats_alter().
+ */
+function `!v expand('%:t:r:r')`_date_formats_alter(&$formats) {
+  ${1}
+}
+endsnippet
+
+snippet hook_page_delivery_callback_alter "hook_page_delivery_callback_alter"
+/**
+ * Implements hook_page_delivery_callback_alter().
+ */
+function `!v expand('%:t:r:r')`_page_delivery_callback_alter(&$callback) {
+  ${1}
+}
+endsnippet
+
+snippet hook_system_themes_page_alter "hook_system_themes_page_alter"
+/**
+ * Implements hook_system_themes_page_alter().
+ */
+function `!v expand('%:t:r:r')`_system_themes_page_alter(&$theme_groups) {
+  ${1}
+}
+endsnippet
+
+snippet hook_url_inbound_alter "hook_url_inbound_alter"
+/**
+ * Implements hook_url_inbound_alter().
+ */
+function `!v expand('%:t:r:r')`_url_inbound_alter(&$path, $original_path, $path_language) {
+  ${1}
+}
+endsnippet
+
+snippet hook_url_outbound_alter "hook_url_outbound_alter"
+/**
+ * Implements hook_url_outbound_alter().
+ */
+function `!v expand('%:t:r:r')`_url_outbound_alter(&$path, &$options, $original_path) {
+  ${1}
+}
+endsnippet
+
+snippet hook_username_alter "hook_username_alter"
+/**
+ * Implements hook_username_alter().
+ */
+function `!v expand('%:t:r:r')`_username_alter(&$name, $account) {
+  ${1}
+}
+endsnippet
+
+snippet hook_tokens "hook_tokens"
+/**
+ * Implements hook_tokens().
+ */
+function `!v expand('%:t:r:r')`_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  $replacements = array();
+
+  ${1}
+
+  return $replacements;
+}
+endsnippet
+
+snippet hook_tokens_alter "hook_tokens_alter"
+/**
+ * Implements hook_tokens_alter().
+ */
+function `!v expand('%:t:r:r')`_tokens_alter(array &$replacements, array $context) {
+  ${1}
+}
+endsnippet
+
+snippet hook_token_info "hook_token_info"
+/**
+ * Implements hook_token_info().
+ */
+function `!v expand('%:t:r:r')`_token_info() {
+  ${1}
+
+  return array(
+    'types' => array(${2}),
+    'tokens' => array(${3}),
+  );
+}
+endsnippet
+
+snippet hook_token_info_alter "hook_token_info_alter"
+/**
+ * Implements hook_token_info_alter().
+ */
+function `!v expand('%:t:r:r')`_token_info_alter(&$data) {
+  ${1}
+}
+endsnippet
+
+snippet hook_batch_alter "hook_batch_alter"
+/**
+ * Implements hook_batch_alter().
+ */
+function `!v expand('%:t:r:r')`_batch_alter(&$batch) {
+  ${1}
+}
+endsnippet
+
+snippet hook_updater_info "hook_updater_info"
+/**
+ * Implements hook_updater_info().
+ */
+function `!v expand('%:t:r:r')`_updater_info() {
+  return array(
+    ${1}
+  );
+}
+endsnippet
+
+snippet hook_updater_info_alter "hook_updater_info_alter"
+/**
+ * Implements hook_updater_info_alter().
+ */
+function `!v expand('%:t:r:r')`_updater_info_alter(&$updaters) {
+  ${1}
+}
+endsnippet
+
+snippet hook_countries_alter "hook_countries_alter"
+/**
+ * Implements hook_countries_alter().
+ */
+function `!v expand('%:t:r:r')`_countries_alter(&$countries) {
+  ${1}
+}
+endsnippet
+
+snippet hook_menu_site_status_alter "hook_menu_site_status_alter"
+/**
+ * Implements hook_menu_site_status_alter().
+ */
+function `!v expand('%:t:r:r')`_menu_site_status_alter(&$menu_site_status, $path) {
+  ${1}
+}
+endsnippet
+
+snippet hook_filetransfer_info "hook_filetransfer_info"
+/**
+ * Implements hook_filetransfer_info().
+ */
+function `!v expand('%:t:r:r')`_filetransfer_info() {
+  $info['${1}'] = array(
+    ${2}
+  );
+
+  return $info;
+}
+endsnippet
+
+snippet hook_filetransfer_info_alter "hook_filetransfer_info_alter"
+/**
+ * Implements hook_filetransfer_info_alter().
+ */
+function `!v expand('%:t:r:r')`_filetransfer_info_alter(&$filetransfer_info) {
+  ${1}
+}
+endsnippet
