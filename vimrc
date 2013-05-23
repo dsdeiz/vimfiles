@@ -13,7 +13,7 @@ set fileformats=unix,dos
 set fileformat=unix
 
 set wildmode=list:longest,full
-set wildignore=*.png,*.jpg,*.jpeg,*.gif,*.swp,*.swo,sites/default/files/**,.git
+set wildignore=*.png,*.jpg,*.jpeg,*.gif,*.swp,*.swo,sites/default/files/**,.git,*.tar
 
 set hidden
 
@@ -42,7 +42,7 @@ set completeopt-=preview
 exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
-colorscheme jellybeans
+colorscheme molokai
 
 " }}}
 
@@ -105,9 +105,13 @@ autocmd VimLeave * mks! ~/.vim/session.vim
   " Syntastic {{{
 
   let g:syntastic_auto_loc_list=1
-  let g:syntastic_php_checkers=['php', 'phpcs']
+  let g:syntastic_php_checkers=['php']
+  " let g:syntastic_php_checkers=['php', 'phpcs']
   let g:syntastic_php_phpcs_args="--standard=Drupal --extensions=php,module,inc,install,test,profile,theme --report=csv"
   let g:syntastic_quiet_warnings=1
+  let g:syntastic_mode_map = { 'mode': 'active',
+        \ 'active_filetypes': ['ruby', 'php'],
+        \ 'passive_filetypes': [] }
 
   " Sometimes, I don't follow standards. :D
   nnoremap <Leader>st :SyntasticToggleMode<CR>

@@ -1654,7 +1654,7 @@ snippet hook_entity_query_alter "hook_entity_query_alter"
 /**
  * Implements hook_entity_query_alter().
  */
-function hook_entity_query_alter($query) {
+function `!v expand('%:t:r:r')`_entity_query_alter($query) {
   ${1}
 }
 endsnippet
@@ -1663,7 +1663,7 @@ snippet hook_entity_view "hook_entity_view"
 /**
  * Implements hook_entity_view().
  */
-function hook_entity_view($entity, $type, $view_mode, $langcode) {
+function `!v expand('%:t:r:r')`_entity_view($entity, $type, $view_mode, $langcode) {
   ${1}
 }
 endsnippet
@@ -1672,7 +1672,7 @@ snippet hook_entity_view_alter "hook_entity_view_alter"
 /**
  * Implements hook_entity_view_alter().
  */
-function hook_entity_view_alter(&$build, $type) {
+function `!v expand('%:t:r:r')`_entity_view_alter(&$build, $type) {
   ${1}
 }
 endsnippet
@@ -1681,7 +1681,7 @@ snippet hook_entity_view_mode_alter "hook_entity_view_mode_alter"
 /**
  * Implements hook_entity_view_mode_alter().
  */
-function hook_entity_view_mode_alter(&$view_mode, $context) {
+function `!v expand('%:t:r:r')`_entity_view_mode_alter(&$view_mode, $context) {
   ${1}
 }
 endsnippet
@@ -1690,11 +1690,552 @@ snippet hook_admin_paths "hook_admin_paths"
 /**
  * Implements hook_admin_paths().
  */
-function hook_admin_paths() {
+function `!v expand('%:t:r:r')`_admin_paths() {
   $paths = array(
     ${1}
   );
 
   return $paths;
+}
+endsnippet
+
+snippet hook_admin_paths_alter "hook_admin_paths_alter"
+/**
+ * Implements hook_admin_paths_alter().
+ */
+function `!v expand('%:t:r:r')`_admin_paths_alter(&$paths) {
+  ${1}
+}
+endsnippet
+
+snippet hook_entity_prepare_view "hook_entity_prepare_view"
+/**
+ * Implements hook_entity_prepare_view().
+ */
+function `!v expand('%:t:r:r')`_entity_prepare_view($entities, $type, $langcode) {
+  ${1}
+}
+endsnippet
+
+snippet hook_cron "hook_cron"
+/**
+ * Implements hook_cron().
+ */
+function `!v expand('%:t:r:r')`_cron() {
+  ${1}
+}
+endsnippet
+
+snippet hook_cron_queue_info "hook_cron_queue_info"
+/**
+ * Implements hook_cron_queue_info().
+ */
+function `!v expand('%:t:r:r')`_cron_queue_info() {
+  $queues[${1}] = array(
+    ${2}
+  );
+
+  return $queues;
+}
+endsnippet
+
+snippet hook_cron_queue_info_alter "hook_cron_queue_info_alter"
+/**
+ * Implements hook_cron_queue_info_alter().
+ */
+function `!v expand('%:t:r:r')`_cron_queue_info_alter(&$queues) {
+  ${1}
+}
+endsnippet
+
+snippet hook_element_info "hook_element_info"
+/**
+ * Implements hook_element_info().
+ */
+function `!v expand('%:t:r:r')`_element_info() {
+  $types[${1}] = array(
+  );
+
+  return $types;
+}
+endsnippet
+
+snippet hook_element_info_alter "hook_element_info_alter"
+/**
+ * Implements hook_element_info_alter().
+ */
+function `!v expand('%:t:r:r')`_element_info_alter(&$type) {
+  ${1}
+}
+endsnippet
+
+snippet hook_exit "hook_exit"
+/**
+ * Implements hook_exit().
+ */
+function `!v expand('%:t:r:r')`_exit($destination = NULL) {
+  ${1}
+}
+endsnippet
+
+snippet hook_js_alter "hook_js_alter"
+/**
+ * Implements hook_js_alter().
+ */
+function `!v expand('%:t:r:r')`_js_alter(&$javascript) {
+  ${1}
+}
+endsnippet
+
+snippet hook_library "hook_library"
+/**
+ * Implements hook_library().
+ */
+function `!v expand('%:t:r:r')`_library() {
+  $libraries['${1}'] = array(
+    ${2}
+  );
+
+  return $libraries;
+}
+endsnippet
+
+snippet hook_library_alter "hook_library_alter"
+/**
+ * Implements hook_library_alter().
+ */
+function `!v expand('%:t:r:r')`_library_alter(&$libraries, $module) {
+  ${1}
+}
+endsnippet
+
+snippet hook_css_alter "hook_css_alter"
+/**
+ * Implements hook_css_alter().
+ */
+function `!v expand('%:t:r:r')`_css_alter(&$css) {
+  ${1}
+}
+endsnippet
+
+snippet hook_ajax_render_alter "hook_ajax_render_alter"
+/**
+ * Implements hook_ajax_render_alter().
+ */
+function `!v expand('%:t:r:r')`_ajax_render_alter($commands) {
+  ${1}
+}
+endsnippet
+
+snippet hook_page_build "hook_page_build"
+/**
+ * Implements hook_page_build().
+ */
+function `!v expand('%:t:r:r')`_page_build(&$page) {
+  ${1}
+}
+endsnippet
+
+snippet hook_menu_get_item_alter "hook_menu_get_item_alter"
+/**
+ * Implements hook_menu_get_item_alter().
+ */
+function `!v expand('%:t:r:r')`_menu_get_item_alter(&$router_item, $path, $original_map) {
+  ${1}
+}
+endsnippet
+
+snippet hook_menu "hook_menu"
+/**
+ * Implements hook_menu().
+ */
+function `!v expand('%:t:r:r')`_menu() {
+  $items['${1}'] = array(
+    ${2}
+  );
+
+  return $items;
+}
+endsnippet
+
+snippet hook_menu_alter "hook_menu_alter"
+/**
+ * Implements hook_menu_alter().
+ */
+function `!v expand('%:t:r:r')`_menu_alter(&$items) {
+  ${1}
+}
+endsnippet
+
+snippet hook_menu_link_alter "hook_menu_link_alter"
+/**
+ * Implements hook_menu_link_alter().
+ */
+function `!v expand('%:t:r:r')`_menu_link_alter(&$item) {
+  ${1}
+}
+endsnippet
+
+snippet hook_translated_menu_link_alter "hook_translated_menu_link_alter"
+/**
+ * Implements hook_translated_menu_link_alter().
+ */
+function `!v expand('%:t:r:r')`_translated_menu_link_alter(&$item, $map) {
+  ${1}
+}
+endsnippet
+
+snippet hook_menu_link_insert "hook_menu_link_insert"
+/**
+ * Implements hook_menu_link_insert().
+ */
+function `!v expand('%:t:r:r')`_menu_link_insert($link) {
+  ${1}
+}
+endsnippet
+
+snippet hook_menu_link_update "hook_menu_link_update"
+/**
+ * Implements hook_menu_link_update().
+ */
+function `!v expand('%:t:r:r')`_menu_link_update($link) {
+  ${1}
+}
+endsnippet
+
+snippet hook_menu_link_delete "hook_menu_link_delete"
+/**
+ * Implements hook_menu_link_delete().
+ */
+function `!v expand('%:t:r:r')`_menu_link_delete($link) {
+  ${1}
+}
+endsnippet
+
+snippet hook_menu_local_tasks_alter "hook_menu_local_tasks_alter"
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function `!v expand('%:t:r:r')`_menu_local_tasks_alter(&$data, $router_item, $root_path) {
+  ${1}
+}
+endsnippet
+
+snippet hook_menu_breadcrumb_alter "hook_menu_breadcrumb_alter"
+/**
+ * Implements hook_menu_breadcrumb_alter().
+ */
+function `!v expand('%:t:r:r')`_menu_breadcrumb_alter(&$active_trail, $item) {
+  ${1}
+}
+endsnippet
+
+snippet hook_menu_contextual_links_alter "hook_menu_contextual_links_alter"
+/**
+ * Implements hook_menu_contextual_links_alter().
+ */
+function `!v expand('%:t:r:r')`_menu_contextual_links_alter(&$links, $router_item, $root_path) {
+  ${1}
+}
+endsnippet
+
+snippet hook_page_alter "hook_page_alter"
+/**
+ * Implements hook_page_alter().
+ */
+function `!v expand('%:t:r:r')`_page_alter(&$page) {
+  ${1}
+}
+endsnippet
+
+snippet hook_form_alter "hook_form_alter"
+/**
+ * Implements hook_form_alter().
+ */
+function `!v expand('%:t:r:r')`_form_alter(&$form, &$form_state, $form_id) {
+  ${1}
+}
+endsnippet
+
+snippet hook_form_form_id_alter "hook_form_FORM_ID_alter"
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function `!v expand('%:t:r:r')`_form_${1:form_id}_alter(&$form, &$form_state, $form_id) {
+  ${2}
+}
+endsnippet
+
+snippet hook_form_base_form_id_alter "hook_form_BASE_FORM_ID_alter"
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function hook_form_${1:base_form_id}_alter(&$form, &$form_state, $form_id) {
+  ${2}
+}
+endsnippet
+
+snippet hook_forms "hook_forms"
+/**
+ * Implements hook_forms().
+ */
+function `!v expand('%:t:r:r')`_forms($form_id, $args) {
+  $forms['${1}'] = array(
+    ${2}
+  );
+
+  return $forms;
+}
+endsnippet
+
+snippet hook_boot "hook_boot"
+/**
+ * Implements hook_boot().
+ */
+function `!v expand('%:t:r:r')`_boot() {
+  ${1}
+}
+endsnippet
+
+snippet hook_init "hook_init"
+/**
+ * Implements hook_init().
+ */
+function `!v expand('%:t:r:r')`_init() {
+  ${1}
+}
+endsnippet
+
+snippet hook_image_toolkits "hook_image_toolkits"
+/**
+ * Implements hook_image_toolkits().
+ */
+function `!v expand('%:t:r:r')`_image_toolkits() {
+  return array(
+    ${1}
+  );
+}
+endsnippet
+
+snippet hook_mail_alter "hook_mail_alter"
+/**
+ * Implements hook_mail_alter().
+ */
+function `!v expand('%:t:r:r')`_mail_alter(&$message) {
+  ${1}
+}
+endsnippet
+
+snippet hook_module_implements_alter "hook_module_implements_alter"
+/**
+ * Implements hook_module_implements_alter().
+ */
+function `!v expand('%:t:r:r')`_module_implements_alter(&$implementations, $hook) {
+  ${1}
+}
+endsnippet
+
+snippet hook_system_theme_info "hook_system_theme_info"
+/**
+ * Implements hook_system_theme_info().
+ */
+function `!v expand('%:t:r:r')`_system_theme_info() {
+  $themes['${1}'] = ${2};
+
+  return $themes;
+}
+endsnippet
+
+snippet hook_system_info_alter "hook_system_info_alter"
+/**
+ * Implements hook_system_info_alter().
+ */
+function `!v expand('%:t:r:r')`_system_info_alter(&$info, $file, $type) {
+  ${1}
+}
+endsnippet
+
+snippet hook_permission "hook_permission"
+/**
+ * Implements hook_permission().
+ */
+function `!v expand('%:t:r:r')`_permission() {
+  return array(
+    '${1}' =>  array(
+      ${2}
+    ),
+  );
+}
+endsnippet
+
+snippet hook_theme "hook_theme"
+/**
+ * Implements hook_theme().
+ */
+function `!v expand('%:t:r:r')`_theme($existing, $type, $theme, $path) {
+  return array(
+    ${1}
+  );
+}
+endsnippet
+
+snippet hook_theme_registry_alter "hook_theme_registry_alter"
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function `!v expand('%:t:r:r')`_theme_registry_alter(&$theme_registry) {
+  ${1}
+}
+endsnippet
+
+snippet hook_custom_theme "hook_custom_theme"
+/**
+ * Implements hook_custom_theme().
+ */
+function `!v expand('%:t:r:r')`_custom_theme() {
+  ${1}
+}
+endsnippet
+
+snippet hook_xmlrpc "hook_xmlrpc"
+/**
+ * Implements hook_xmlrpc().
+ */
+function `!v expand('%:t:r:r')`_xmlrpc() {
+  return array(
+    ${1}
+  );
+}
+endsnippet
+
+snippet hook_xmlrpc_alter "hook_xmlrpc_alter"
+/**
+ * Implements hook_xmlrpc_alter().
+ */
+function `!v expand('%:t:r:r')`_xmlrpc_alter(&$methods) {
+  ${1}
+}
+endsnippet
+
+snippet hook_watchdog "hook_watchdog"
+/**
+ * Implements hook_watchdog().
+ */
+function `!v expand('%:t:r:r')`_watchdog(array $log_entry) {
+  ${1}
+}
+endsnippet
+
+snippet hook_mail "hook_mail"
+/**
+ * Implements hook_mail().
+ */
+function `!v expand('%:t:r:r')`_mail($key, &$message, $params) {
+  ${1}
+}
+endsnippet
+
+snippet hook_flush_caches "hook_flush_caches"
+/**
+ * Implements hook_flush_caches().
+ */
+function `!v expand('%:t:r:r')`_flush_caches() {
+  ${1}
+}
+endsnippet
+
+snippet hook_modules_installed "hook_modules_installed"
+/**
+ * Implements hook_modules_installed().
+ */
+function `!v expand('%:t:r:r')`_modules_installed($modules) {
+  ${1}
+}
+endsnippet
+
+snippet hook_modules_enabled "hook_modules_enabled"
+/**
+ * Implements hook_modules_enabled().
+ */
+function `!v expand('%:t:r:r')`_modules_enabled($modules) {
+  ${1}
+}
+endsnippet
+
+snippet hook_modules_disabled "hook_modules_disabled"
+/**
+ * Implements hook_modules_disabled().
+ */
+function `!v expand('%:t:r:r')`_modules_disabled($modules) {
+  ${1}
+}
+endsnippet
+
+snippet hook_modules_uninstalled "hook_modules_uninstalled"
+/**
+ * Implements hook_modules_uninstalled().
+ */
+function `!v expand('%:t:r:r')`_modules_uninstalled($modules) {
+  ${1}
+}
+endsnippet
+
+snippet hook_stream_wrappers "hook_stream_wrappers"
+/**
+ * Implements hook_stream_wrappers().
+ */
+function `!v expand('%:t:r:r')`_stream_wrappers() {
+  return array(
+    ${1}
+  );
+}
+endsnippet
+
+snippet hook_stream_wrappers_alter "hook_stream_wrappers_alter"
+/**
+ * Implements hook_stream_wrappers_alter().
+ */
+function `!v expand('%:t:r:r')`_stream_wrappers_alter(&$wrappers) {
+  ${1}
+}
+endsnippet
+
+snippet hook_file_load "hook_file_load"
+/**
+ * Implements hook_file_load().
+ */
+function `!v expand('%:t:r:r')`_file_load($files) {
+  ${1}
+}
+endsnippet
+
+snippet hook_file_validate "hook_file_validate"
+/**
+ * Implements hook_file_validate().
+ */
+function `!v expand('%:t:r:r')`_file_validate($file) {
+  $errors = array();
+
+  ${1}
+
+  return $errors;
+}
+endsnippet
+
+snippet hook_file_presave "hook_file_presave"
+/**
+ * Implements hook_file_presave().
+ */
+function `!v expand('%:t:r:r')`_file_presave($file) {
+  ${1}
+}
+endsnippet
+
+snippet hook_file_insert "hook_file_insert"
+/**
+ * Implements hook_file_insert().
+ */
+function `!v expand('%:t:r:r')`_file_insert($file) {
+  ${1}
 }
 endsnippet
