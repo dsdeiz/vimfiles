@@ -4,7 +4,8 @@ if exists("did_load_filetypes")
 endif
 
 augroup filetypedetect
-  au! BufRead,BufNewFile *.install setfiletype php
-  au! BufRead,BufNewFile *.test setfiletype php
-  au! BufRead,BufNewFile *.inc setfiletype php
+  au! BufRead,BufNewFile *.install setfiletype drupal.php
+  au! BufRead,BufNewFile *.test setfiletype drupal.php
+  au! BufRead,BufNewFile *.inc setfiletype drupal.php
+  au! BufRead,BufNewFile *.module setfiletype drupal.php
 augroup END
