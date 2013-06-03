@@ -42,7 +42,7 @@ set completeopt-=preview
 exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
-colorscheme molokai
+colorscheme ir_black
 
 " }}}
 
