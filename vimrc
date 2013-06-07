@@ -42,7 +42,8 @@ set completeopt-=preview
 exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
-colorscheme vividchalk
+set background=dark
+colorscheme molokai
 
 " }}}
 
@@ -150,6 +151,14 @@ autocmd VimLeave * mks! ~/.vim/session.vim
 
   let g:ctrlp_working_path_mode=''
   let g:ctrlp_follow_symlinks=1
+
+  " }}}
+
+  " Indent Guides {{{
+
+  let g:indent_guides_guide_size=1
+  let g:indent_guides_enable_on_startup=0
+  let g:indent_guides_auto_colors=1
 
   " }}}
 
