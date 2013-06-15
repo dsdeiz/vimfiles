@@ -43,7 +43,7 @@ exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
 set background=dark
-colorscheme xoria256
+colorscheme neverland-darker
 
 " }}}
 
