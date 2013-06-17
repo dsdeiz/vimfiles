@@ -43,7 +43,7 @@ exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
 set background=dark
-colorscheme neverland-darker
+colorscheme ir_black
 
 " }}}
 
@@ -103,6 +103,12 @@ autocmd VimLeave * mks! ~/.vim/session.vim
 
 " Plugin settings {{{
 
+  " Powerline {{{
+
+  " let g:Powerline_symbols='fancy'
+
+  " }}}
+
   " Syntastic {{{
 
   let g:syntastic_auto_loc_list=1
@@ -121,7 +127,8 @@ autocmd VimLeave * mks! ~/.vim/session.vim
 
   " Ack {{{
 
-  let g:ackprg="ack -H --nocolor --nogroup --column"
+  " let g:ackprg="ack -H --nocolor --nogroup --column"
+  let g:ackprg="ag --nogroup --nocolor --column"
 
   " }}}
 
