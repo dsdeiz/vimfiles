@@ -13,7 +13,7 @@ set fileformats=unix,dos
 set fileformat=unix
 
 set wildmode=list:longest,full
-set wildignore=*.png,*.jpg,*.jpeg,*.gif,*.swp,*.swo,sites/default/files/**,.git,*.tar
+set wildignore=*.png,*.jpg,*.jpeg,*.gif,*.swp,*.swo,*/sites/default/files/**,.git,*.tar
 
 set hidden
 
@@ -129,6 +129,7 @@ autocmd VimLeave * mks! ~/.vim/session.vim
 
   " let g:ackprg="ack -H --nocolor --nogroup --column"
   let g:ackprg="ag --nogroup --nocolor --column"
+  nnoremap <Leader>ag :Ack! 
 
   " }}}
 
