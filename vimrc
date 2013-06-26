@@ -13,7 +13,7 @@ set fileformats=unix,dos
 set fileformat=unix
 
 set wildmode=list:longest,full
-set wildignore=*.png,*.jpg,*.jpeg,*.gif,*.swp,*.swo,*/sites/default/files/**,.git,*.tar
+set wildignore=*.png,*.jpg,*.jpeg,*.gif,*.swp,*.swo,*/sites/*/files/**,.git,*.tar
 
 set hidden
 
@@ -43,7 +43,7 @@ exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
 set background=dark
-colorscheme ir_black
+colorscheme molokai
 
 " }}}
 
