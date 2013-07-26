@@ -8,4 +8,5 @@ augroup filetypedetect
   au! BufRead,BufNewFile *.test setfiletype php.drupal
   au! BufRead,BufNewFile *.inc setfiletype php.drupal
   au! BufRead,BufNewFile *.module setfiletype php.drupal
+  au! BufRead,BufNewFile *.profile setfiletype php.drupal
 augroup END
