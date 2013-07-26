@@ -1,3 +1,6 @@
+" Make vim use zsh since I'm testing fish.
+" set shell=/bin/zsh
+
 execute pathogen#infect()
 
 filetype plugin indent on
@@ -43,7 +46,7 @@ exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
 set background=dark
-colorscheme molokai
+colorscheme ir_black
 
 " }}}
 
@@ -159,6 +162,9 @@ autocmd VimLeave * mks! ~/.vim/session.vim
 
   let g:ctrlp_working_path_mode=''
   let g:ctrlp_follow_symlinks=1
+
+  " Ignore *.png, *.gif, *.jpg, and *.jpeg files.
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files | grep -v "\.\(png\|gif|jp\(e\)\?g\)\$"']
 
   " }}}
 

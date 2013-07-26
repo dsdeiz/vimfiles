@@ -71,3 +71,48 @@ snippet block_comment "block comment"
 // ----------------------------------------------------------------------------
 // ${1}
 endsnippet
+
+snippet class "class" !
+/**
+ * @todo
+ */
+class ${1} {
+  ${2}
+}
+endsnippet
+
+snippet __construct "__construct"
+/**
+ * ${1:@todo}
+ */
+public function __construct(${2}) {
+  ${3}
+}
+endsnippet
+
+snippet method "method"
+/**
+ * ${1:@todo}
+ */
+public function ${2}(${3}) {
+  ${4}
+}
+endsnippet
+
+snippet prot_method "protected method"
+/**
+ * ${1:@todo}
+ */
+protected function ${2}(${3}) {
+  ${4}
+}
+endsnippet
+
+snippet priv_method "private method"
+/**
+ * ${1:@todo}
+ */
+private function ${2}(${3}) {
+  ${4}
+}
+endsnippet
