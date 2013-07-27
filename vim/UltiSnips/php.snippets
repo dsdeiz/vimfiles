@@ -74,10 +74,10 @@ endsnippet
 
 snippet class "class" !
 /**
- * @todo
+ * ${1:@todo}
  */
-class ${1} {
-  ${2}
+class ${2} {
+  ${3}
 }
 endsnippet
 
@@ -113,6 +113,42 @@ snippet priv_method "private method"
  * ${1:@todo}
  */
 private function ${2}(${3}) {
+  ${4}
+}
+endsnippet
+
+snippet interface "interface" !
+/**
+ * ${1:@todo}
+ */
+interface ${2} {
+  ${3}
+}
+endsnippet
+
+snippet abstract "abstract"
+/**
+ * ${1:@todo}
+ */
+abstract ${2} {
+  ${3}
+}
+endsnippet
+
+snippet class_interface "class implementing interface"
+/**
+ * ${1:@todo}
+ */
+class ${2} implements ${3} {
+  ${4}
+}
+endsnippet
+
+snippet class_abstract "class extending abstract"
+/**
+ * ${1:@todo}
+ */
+class ${2} extends ${3} {
   ${4}
 }
 endsnippet
