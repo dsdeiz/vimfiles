@@ -46,7 +46,7 @@ exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
 set background=dark
-colorscheme ir_black
+colorscheme inkpot
 
 " }}}
 
