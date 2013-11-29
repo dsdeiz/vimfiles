@@ -37,7 +37,7 @@ set ignorecase
 
 set number
 set mousehide
-set nocul
+set cul
 set complete-=b
 set complete-=u
 set complete-=w
@@ -46,7 +46,7 @@ exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
 set background=dark
-colorscheme inkpot
+colorscheme molokai
 
 " }}}
 
@@ -176,6 +176,12 @@ autocmd VimLeave * mks! ~/.vim/session.vim
 
   " }}}
 
+  " NERDTree {{{
+
+  nnoremap <Leader>n :NERDTreeToggle<CR>
+
+  " }}}
+
 " }}}
 
 " Sessions {{{
@@ -191,6 +197,12 @@ set sessionoptions-=blank
 
 inoremap <Leader>fn <C-R>=expand("%:t:r:r")<CR>
 nnoremap <Leader>fn "=expand("%:t:r:r")<CR>p
+
+" }}}
+
+" Hilights {{{
+
+hi Normal ctermbg=NONE
 
 " }}}
 
