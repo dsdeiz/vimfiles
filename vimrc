@@ -37,7 +37,6 @@ set ignorecase
 
 set number
 set mousehide
-set cul
 set complete-=b
 set complete-=u
 set complete-=w
@@ -46,7 +45,7 @@ exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
 set background=dark
-colorscheme molokai
+colorscheme neverland
 
 " }}}
 
@@ -101,6 +100,14 @@ nnoremap <Leader>ev :e $MYVIMRC<CR>
 " Autocommand settings {{{
 
 autocmd VimLeave * mks! ~/.vim/session.vim
+
+augroup php
+  " autocmd BufEnter *.install let b:syntastic_checkers=['php', 'phpcs']
+  " autocmd BufEnter *.test let b:syntastic_checkers=['php', 'phpcs']
+  " autocmd BufEnter *.inc let b:syntastic_checkers=['php', 'phpcs']
+  " autocmd BufEnter *.module let b:syntastic_checkers=['php', 'phpcs']
+  " autocmd BufEnter *.profile let b:syntastic_checkers=['php', 'phpcs']
+augroup END
 
 " }}}
 
