@@ -45,7 +45,7 @@ exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
 set background=dark
-colorscheme neverland
+colorscheme vividchalk
 
 " }}}
 
@@ -171,7 +171,8 @@ augroup END
   let g:ctrlp_follow_symlinks=1
 
   " Ignore *.png, *.gif, *.jpg, and *.jpeg files.
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files | grep -v "\.\(png\|gif|jp\(e\)\?g\)\$"']
+  " let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files | grep -v "\.\(png\|gif|jp\(e\)\?g\)\$"', 'find -L %s -type f | grep -v "\.jpg$"']
+  let g:ctrlp_user_command = 'find -L %s -type f | grep -v "\.jpg$"'
 
   " }}}
 
@@ -186,6 +187,13 @@ augroup END
   " NERDTree {{{
 
   nnoremap <Leader>n :NERDTreeToggle<CR>
+
+  " }}}
+
+  " PHP Namespace
+
+  inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
+  noremap <Leader>u :call PhpInsertUse()<CR>
 
   " }}}
 
