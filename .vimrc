@@ -1,5 +1,5 @@
-" Make vim use zsh since I'm testing fish.
-" set shell=/bin/zsh
+set nocompatible
+filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -24,6 +24,7 @@ filetype plugin indent on
 
 syntax on
 
+set backspace=indent,eol,start
 set vb t_vb=
 set mouse=a
 
@@ -36,6 +37,23 @@ set wildignore=*.png,*.jpg,*.jpeg,*.gif,*.swp,*.swo,*/sites/*/files/**,.git,*.ta
 set hidden
 
 set colorcolumn=80
+
+set autoindent
+set backspace=indent,eol,start
+set smarttab
+
+set ttimeout
+set ttimeoutlen=100
+
+set incsearch
+
+set laststatus=2
+set ruler
+set showcmd
+
+set display+=lastline
+
+set fileformats+=mac
 
 " }}}
 
@@ -140,7 +158,7 @@ augroup END
   let g:syntastic_php_checkers=['php']
   " let g:syntastic_php_checkers=['php', 'phpcs']
   let g:syntastic_php_phpcs_args="--standard=Drupal --extensions=php,module,inc,install,test,profile,theme --report=csv"
-  let g:syntastic_quiet_warnings=1
+  let g:syntastic_quiet_messages=1
   let g:syntastic_mode_map = { 'mode': 'active',
         \ 'active_filetypes': ['ruby', 'php'],
         \ 'passive_filetypes': [] }
