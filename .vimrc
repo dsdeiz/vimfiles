@@ -46,6 +46,8 @@ filetype plugin indent on
 
 syntax on
 
+set t_Co=256
+
 set backspace=indent,eol,start
 set vb t_vb=
 set mouse=a
@@ -101,7 +103,7 @@ exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
 set background=dark
-colorscheme vividchalk
+colorscheme molokai
 
 " }}}
 
