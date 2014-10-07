@@ -1,9 +1,13 @@
 set nocompatible
 filetype off
 
+" Vundle {{{
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" General plugins {{{
+"
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'godlygeek/tabular'
@@ -15,10 +19,28 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-commentary'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'tpope/vim-endwise'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdtree'
+
+" }}}
+
+" PHP {{{
+
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'vim-php/tagbar-phpctags.vim'
+
+" }}}
+
+Plugin 'dsdeiz/vim-drupal-snippets'
 
 call vundle#end()
 
 filetype plugin indent on
+
+" "}}}
 
 " Basic settings {{{
 
@@ -55,6 +77,7 @@ set display+=lastline
 
 set fileformats+=mac
 
+set listchars=trail:·,precedes:«,extends:»,tab:▸\ 
 " }}}
 
 " Layout settings {{{
