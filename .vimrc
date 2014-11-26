@@ -1,14 +1,54 @@
-" Make vim use zsh since I'm testing fish.
-" set shell=/bin/zsh
+set nocompatible
+filetype off
 
-execute pathogen#infect()
+" Vundle {{{
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" General plugins {{{
+"
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'SirVer/ultisnips'
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-fugitive'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-commentary'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'tpope/vim-endwise'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdtree'
+
+" }}}
+
+" PHP {{{
+
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'vim-php/tagbar-phpctags.vim'
+
+" }}}
+
+Plugin 'dsdeiz/vim-drupal-snippets'
+
+call vundle#end()
 
 filetype plugin indent on
+
+" "}}}
 
 " Basic settings {{{
 
 syntax on
 
+set t_Co=256
+
+set backspace=indent,eol,start
 set vb t_vb=
 set mouse=a
 
@@ -22,6 +62,24 @@ set hidden
 
 set colorcolumn=80
 
+set autoindent
+set backspace=indent,eol,start
+set smarttab
+
+set ttimeout
+set ttimeoutlen=100
+
+set incsearch
+
+set laststatus=2
+set ruler
+set showcmd
+
+set display+=lastline
+
+set fileformats+=mac
+
+set listchars=trail:·,precedes:«,extends:»,tab:▸\ 
 " }}}
 
 " Layout settings {{{
@@ -45,7 +103,7 @@ exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
 set background=dark
-colorscheme vividchalk
+colorscheme molokai
 
 " }}}
 
@@ -125,7 +183,7 @@ augroup END
   let g:syntastic_php_checkers=['php']
   " let g:syntastic_php_checkers=['php', 'phpcs']
   let g:syntastic_php_phpcs_args="--standard=Drupal --extensions=php,module,inc,install,test,profile,theme --report=csv"
-  let g:syntastic_quiet_warnings=1
+  let g:syntastic_quiet_messages=1
   let g:syntastic_mode_map = { 'mode': 'active',
         \ 'active_filetypes': ['ruby', 'php'],
         \ 'passive_filetypes': [] }
