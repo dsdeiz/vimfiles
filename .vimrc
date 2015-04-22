@@ -6,41 +6,68 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" General plugins {{{
-"
-Plugin 'mileszs/ack.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'SirVer/ultisnips'
-Plugin 'Raimondi/delimitMate'
-Plugin 'tpope/vim-fugitive'
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-commentary'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'tpope/vim-endwise'
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdtree'
+  " General plugins {{{
 
-" }}}
+  Plugin 'gmarik/Vundle.vim'
+  Plugin 'mileszs/ack.vim'
+  Plugin 'kien/ctrlp.vim'
+  Plugin 'godlygeek/tabular'
+  Plugin 'tpope/vim-repeat'
+  Plugin 'tpope/vim-surround'
+  Plugin 'SirVer/ultisnips'
+  Plugin 'Raimondi/delimitMate'
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'majutsushi/tagbar'
+  Plugin 'scrooloose/syntastic'
+  Plugin 'tpope/vim-commentary'
+  Plugin 'nathanaelkane/vim-indent-guides'
+  Plugin 'tpope/vim-endwise'
+  Plugin 'bling/vim-airline'
+  Plugin 'scrooloose/nerdtree'
+  Plugin 'matchit.zip', {'name': 'matchit'}
 
-" PHP {{{
+  " }}}
 
-Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'arnaud-lb/vim-php-namespace'
-Plugin 'vim-php/tagbar-phpctags.vim'
+  " PHP {{{
 
-" }}}
+  Plugin 'shawncplus/phpcomplete.vim'
+  Plugin 'arnaud-lb/vim-php-namespace'
+  Plugin 'vim-php/tagbar-phpctags.vim'
 
-Plugin 'dsdeiz/vim-drupal-snippets'
+    " Drupal {{{
+
+    Plugin 'dsdeiz/vim-drupal-snippets'
+
+    " }}}
+
+  " }}}
+
+  " Javascript {{{
+
+  Plugin 'othree/javascript-libraries-syntax.vim'
+  Plugin 'jelera/vim-javascript-syntax'
+  Plugin 'marijnh/tern_for_vim'
+
+  " }}}
+
+  " HTML {{{
+
+  Plugin 'mattn/emmet-vim'
+  Plugin 'vim-scripts/HTML-AutoCloseTag'
+
+  " }}}
+
+  " Markdown {{{
+
+  Plugin 'plasticboy/vim-markdown'
+
+  " }}}
 
 call vundle#end()
 
 filetype plugin indent on
 
-" "}}}
+" }}}
 
 " Basic settings {{{
 
@@ -80,6 +107,9 @@ set display+=lastline
 set fileformats+=mac
 
 set listchars=trail:·,precedes:«,extends:»,tab:▸\ 
+
+set history=1000
+
 " }}}
 
 " Layout settings {{{
@@ -103,7 +133,7 @@ exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
 set background=dark
-colorscheme molokai
+colorscheme ir_black
 
 " }}}
 
@@ -160,22 +190,18 @@ nnoremap <Leader>ev :e $MYVIMRC<CR>
 autocmd VimLeave * mks! ~/.vim/session.vim
 
 augroup php
-  " autocmd BufEnter *.install let b:syntastic_checkers=['php', 'phpcs']
+  autocmd BufEnter *.install let b:syntastic_checkers=['php', 'phpcs']
   " autocmd BufEnter *.test let b:syntastic_checkers=['php', 'phpcs']
-  " autocmd BufEnter *.inc let b:syntastic_checkers=['php', 'phpcs']
-  " autocmd BufEnter *.module let b:syntastic_checkers=['php', 'phpcs']
-  " autocmd BufEnter *.profile let b:syntastic_checkers=['php', 'phpcs']
+  autocmd BufEnter *.inc let b:syntastic_checkers=['php', 'phpcs']
+  autocmd BufEnter *.module let b:syntastic_checkers=['php', 'phpcs']
+  autocmd BufEnter *.profile let b:syntastic_checkers=['php', 'phpcs']
 augroup END
+
+autocmd BufRead PULLREQ_EDITMSG set tw=0
 
 " }}}
 
 " Plugin settings {{{
-
-  " Powerline {{{
-
-  " let g:Powerline_symbols='fancy'
-
-  " }}}
 
   " Syntastic {{{
 
@@ -183,13 +209,22 @@ augroup END
   let g:syntastic_php_checkers=['php']
   " let g:syntastic_php_checkers=['php', 'phpcs']
   let g:syntastic_php_phpcs_args="--standard=Drupal --extensions=php,module,inc,install,test,profile,theme --report=csv"
-  let g:syntastic_quiet_messages=1
+  " let g:syntastic_quiet_messages=1
   let g:syntastic_mode_map = { 'mode': 'active',
         \ 'active_filetypes': ['ruby', 'php'],
         \ 'passive_filetypes': [] }
 
   " Sometimes, I don't follow standards. :D
   nnoremap <Leader>st :SyntasticToggleMode<CR>
+
+  " For angular.
+  let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute " ,
+    \ "trimming empty <",
+    \ "unescaped &" ,
+    \ "lacks \"action",
+    \ "is not recognized!",
+    \ "discarding unexpected"
+    \ ]
 
   " }}}
 
@@ -248,10 +283,28 @@ augroup END
 
   " }}}
 
-  " PHP Namespace
+  " PHP Namespace {{{
 
   inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
   noremap <Leader>u :call PhpInsertUse()<CR>
+
+  " }}}
+
+  " Javascript Libraries Syntax {{{
+
+  let g:used_javascript_libs = 'angularjs,angularui'
+
+  " }}}
+
+  " Javascript {{{
+
+  let g:javascript_conceal=1
+
+  " }}}
+
+  " {{{
+
+  let g:airline_powerline_fonts=1
 
   " }}}
 
