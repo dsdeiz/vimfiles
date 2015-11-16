@@ -24,6 +24,8 @@ call vundle#begin()
   Plugin 'tpope/vim-endwise'
   Plugin 'bling/vim-airline'
   Plugin 'scrooloose/nerdtree'
+  Plugin 'tpope/vim-unimpaired'
+  Plugin 'wellle/targets.vim'
   Plugin 'matchit.zip', {'name': 'matchit'}
 
   " }}}
@@ -93,10 +95,13 @@ set autoindent
 set backspace=indent,eol,start
 set smarttab
 
+set timeoutlen=700
 set ttimeout
 set ttimeoutlen=100
 
 set incsearch
+
+set scrolloff=5
 
 set laststatus=2
 set ruler
@@ -110,6 +115,12 @@ set listchars=trail:·,precedes:«,extends:»,tab:▸\
 
 set history=1000
 
+set switchbuf=useopen
+
+set wrap
+" set linebreak
+" set breakindent
+
 " }}}
 
 " Layout settings {{{
@@ -122,6 +133,7 @@ set softtabstop=2
 set tabstop=2
 
 set ignorecase
+set smartcase
 
 set number
 set mousehide
@@ -133,7 +145,7 @@ exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
 set background=dark
-colorscheme ir_black
+colorscheme molokai
 
 " }}}
 
@@ -178,7 +190,7 @@ nnoremap q: <Nop>
 nmap <Leader>ls :so $HOME/.vim/session.vim<CR>
 
 nnoremap <Leader>sp :sp <C-R>=expand('%:p:h') . '/'<CR>
-nnoremap <Leader>ee :e <C-R>=expand('%:p:h') . '/'<CR>
+nnoremap <Leader>ee :drop <C-R>=expand('%:p:h') . '/'<CR>
 
 nnoremap <Leader>eg :e $MYGVIMRC<CR>
 nnoremap <Leader>ev :e $MYVIMRC<CR>
@@ -190,11 +202,11 @@ nnoremap <Leader>ev :e $MYVIMRC<CR>
 autocmd VimLeave * mks! ~/.vim/session.vim
 
 augroup php
-  autocmd BufEnter *.install let b:syntastic_checkers=['php', 'phpcs']
+  autocmd BufEnter *.install let b:syntastic_checkers=['php']
   " autocmd BufEnter *.test let b:syntastic_checkers=['php', 'phpcs']
-  autocmd BufEnter *.inc let b:syntastic_checkers=['php', 'phpcs']
-  autocmd BufEnter *.module let b:syntastic_checkers=['php', 'phpcs']
-  autocmd BufEnter *.profile let b:syntastic_checkers=['php', 'phpcs']
+  autocmd BufEnter *.inc let b:syntastic_checkers=['php']
+  autocmd BufEnter *.module let b:syntastic_checkers=['php']
+  autocmd BufEnter *.profile let b:syntastic_checkers=['php']
 augroup END
 
 autocmd BufRead PULLREQ_EDITMSG set tw=0
@@ -207,11 +219,10 @@ autocmd BufRead PULLREQ_EDITMSG set tw=0
 
   let g:syntastic_auto_loc_list=1
   let g:syntastic_php_checkers=['php']
-  " let g:syntastic_php_checkers=['php', 'phpcs']
-  let g:syntastic_php_phpcs_args="--standard=Drupal --extensions=php,module,inc,install,test,profile,theme --report=csv"
+  let g:syntastic_php_phpcs_args="--standard=Drupal --extensions=php,module,inc,install,test,profile,theme"
   " let g:syntastic_quiet_messages=1
   let g:syntastic_mode_map = { 'mode': 'active',
-        \ 'active_filetypes': ['ruby', 'php'],
+        \ 'active_filetypes': ['ruby'],
         \ 'passive_filetypes': [] }
 
   " Sometimes, I don't follow standards. :D
@@ -225,6 +236,9 @@ autocmd BufRead PULLREQ_EDITMSG set tw=0
     \ "is not recognized!",
     \ "discarding unexpected"
     \ ]
+
+  " Allow jumping between errors on buffers.
+  let g:syntastic_always_populate_loc_list=1
 
   " }}}
 
@@ -265,7 +279,8 @@ autocmd BufRead PULLREQ_EDITMSG set tw=0
 
   " Ignore *.png, *.gif, *.jpg, and *.jpeg files.
   " let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files | grep -v "\.\(png\|gif|jp\(e\)\?g\)\$"', 'find -L %s -type f | grep -v "\.jpg$"']
-  let g:ctrlp_user_command = 'find -L %s -type f | grep -v "\.jpg$"'
+  " let g:ctrlp_user_command = 'find -L %s -type f -not -path "sites/default/vendor" | grep -v "\.\(png\|gif|jp\(e\)\?g\)\$"'
+  let g:ctrlp_user_command = 'ag -f %s -l --nocolor -g "" --ignore="*.png" --ignore="*.jpeg" --ignore="*.jpg" --ignore="*.gif"'
 
   " }}}
 
@@ -292,7 +307,7 @@ autocmd BufRead PULLREQ_EDITMSG set tw=0
 
   " Javascript Libraries Syntax {{{
 
-  let g:used_javascript_libs = 'angularjs,angularui'
+  " let g:used_javascript_libs = 'angularjs,angularui'
 
   " }}}
 
