@@ -3,4 +3,4 @@
 session.vim
 .netrwhist
 *~
-bundle/*
+.vim/bundle/*

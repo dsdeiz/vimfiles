@@ -8,25 +8,27 @@ call vundle#begin()
 
   " General plugins {{{
 
-  Plugin 'gmarik/Vundle.vim'
-  Plugin 'mileszs/ack.vim'
-  Plugin 'kien/ctrlp.vim'
-  Plugin 'godlygeek/tabular'
-  Plugin 'tpope/vim-repeat'
-  Plugin 'tpope/vim-surround'
-  Plugin 'SirVer/ultisnips'
+  Plugin 'VundleVim/Vundle.vim'
+
   Plugin 'Raimondi/delimitMate'
-  Plugin 'tpope/vim-fugitive'
+  Plugin 'SirVer/ultisnips'
+  Plugin 'bling/vim-airline'
+  Plugin 'editorconfig/editorconfig-vim'
+  Plugin 'godlygeek/tabular'
+  Plugin 'kien/ctrlp.vim'
   Plugin 'majutsushi/tagbar'
+  Plugin 'matchit.zip', {'name': 'matchit'}
+  Plugin 'mileszs/ack.vim'
+  Plugin 'nathanaelkane/vim-indent-guides'
+  Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
   Plugin 'tpope/vim-commentary'
-  Plugin 'nathanaelkane/vim-indent-guides'
   Plugin 'tpope/vim-endwise'
-  Plugin 'bling/vim-airline'
-  Plugin 'scrooloose/nerdtree'
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'tpope/vim-repeat'
+  Plugin 'tpope/vim-surround'
   Plugin 'tpope/vim-unimpaired'
   Plugin 'wellle/targets.vim'
-  Plugin 'matchit.zip', {'name': 'matchit'}
 
   " }}}
 
@@ -50,12 +52,17 @@ call vundle#begin()
   Plugin 'jelera/vim-javascript-syntax'
   Plugin 'marijnh/tern_for_vim'
 
+    " Typescript {{{
+
+    Plugin 'leafgarland/typescript-vim'
+
+    " }}}
+
   " }}}
 
   " HTML {{{
 
   Plugin 'mattn/emmet-vim'
-  Plugin 'vim-scripts/HTML-AutoCloseTag'
 
   " }}}
 
@@ -64,6 +71,17 @@ call vundle#begin()
   Plugin 'plasticboy/vim-markdown'
 
   " }}}
+
+  " CSS {{{
+
+    " Stylus {{{
+    Plugin 'wavded/vim-stylus'
+
+    " }}}
+
+  " }}}
+
+" }}}
 
 call vundle#end()
 
@@ -145,7 +163,7 @@ exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
 set background=dark
-colorscheme molokai
+colorscheme ir_black
 
 " }}}
 
@@ -223,7 +241,7 @@ autocmd BufRead PULLREQ_EDITMSG set tw=0
   " let g:syntastic_quiet_messages=1
   let g:syntastic_mode_map = { 'mode': 'active',
         \ 'active_filetypes': ['ruby'],
-        \ 'passive_filetypes': [] }
+        \ 'passive_filetypes': ['html'] }
 
   " Sometimes, I don't follow standards. :D
   nnoremap <Leader>st :SyntasticToggleMode<CR>
