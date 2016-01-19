@@ -81,6 +81,12 @@ call vundle#begin()
 
   " }}}
 
+  " Rust {{{
+
+  Plugin 'rust-lang/rust.vim'
+
+  " }}}
+
 " }}}
 
 call vundle#end()
@@ -237,6 +243,7 @@ autocmd BufRead PULLREQ_EDITMSG set tw=0
 
   let g:syntastic_auto_loc_list=1
   let g:syntastic_php_checkers=['php']
+  let g:syntastic_tex_checkers=['lacheck']
   let g:syntastic_php_phpcs_args="--standard=Drupal --extensions=php,module,inc,install,test,profile,theme"
   " let g:syntastic_quiet_messages=1
   let g:syntastic_mode_map = { 'mode': 'active',
