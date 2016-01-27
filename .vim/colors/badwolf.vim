@@ -41,7 +41,7 @@ if exists("syntax_on")
     syntax reset
 endif
 
-let colors_name = "badwolf"
+let g:colors_name = "badwolf"
 
 if !exists("g:badwolf_html_link_underline") " {{{
     let g:badwolf_html_link_underline = 1
@@ -89,6 +89,12 @@ let s:bwc.taffy = ['ff2c4b', 196]
 let s:bwc.saltwatertaffy = ['8cffba', 121]
 
 " The star of the show comes straight from Made of Code.
+"
+" You should almost never use this.  It should be used for things that denote
+" 'where the user is', which basically consists of:
+"
+" * The cursor
+" * A REPL prompt
 let s:bwc.tardis = ['0a9dff', 39]
 
 " This one's from Mustang, not Florida!
@@ -392,6 +398,26 @@ call s:HL('InterestingWord6', 'coal', 'taffy')
 " hi RedBar   term=reverse ctermfg=white ctermbg=red guifg=white guibg=#C50048
 
 " }}}
+" Rainbow Parentheses {{{
+
+call s:HL('level16c', 'mediumgravel',   '', 'bold')
+call s:HL('level15c', 'dalespale',      '', '')
+call s:HL('level14c', 'dress',          '', '')
+call s:HL('level13c', 'orange',         '', '')
+call s:HL('level12c', 'tardis',         '', '')
+call s:HL('level11c', 'lime',           '', '')
+call s:HL('level10c', 'toffee',         '', '')
+call s:HL('level9c',  'saltwatertaffy', '', '')
+call s:HL('level8c',  'coffee',         '', '')
+call s:HL('level7c',  'dalespale',      '', '')
+call s:HL('level6c',  'dress',          '', '')
+call s:HL('level5c',  'orange',         '', '')
+call s:HL('level4c',  'tardis',         '', '')
+call s:HL('level3c',  'lime',           '', '')
+call s:HL('level2c',  'toffee',         '', '')
+call s:HL('level1c',  'saltwatertaffy', '', '')
+
+" }}}
 " ShowMarks {{{
 
 call s:HL('ShowMarksHLl', 'tardis', 'blackgravel')
@@ -423,14 +449,21 @@ call s:HL('clojureParen0', 'lightgravel', '', 'none')
 call s:HL('clojureAnonArg', 'snow', '', 'bold')
 
 " }}}
+" Common Lisp {{{
+
+call s:HL('lispFunc',           'lime', '', 'none')
+call s:HL('lispVar',            'orange', '', 'bold')
+call s:HL('lispEscapeSpecial',  'orange', '', 'none')
+
+" }}}
 " CSS {{{
 
 if g:badwolf_css_props_highlight
-    call s:HL('cssColorProp', 'dirtyblonde', '', 'none')
-    call s:HL('cssBoxProp', 'dirtyblonde', '', 'none')
-    call s:HL('cssTextProp', 'dirtyblonde', '', 'none')
-    call s:HL('cssRenderProp', 'dirtyblonde', '', 'none')
-    call s:HL('cssGeneratedContentProp', 'dirtyblonde', '', 'none')
+    call s:HL('cssColorProp', 'taffy', '', 'none')
+    call s:HL('cssBoxProp', 'taffy', '', 'none')
+    call s:HL('cssTextProp', 'taffy', '', 'none')
+    call s:HL('cssRenderProp', 'taffy', '', 'none')
+    call s:HL('cssGeneratedContentProp', 'taffy', '', 'none')
 else
     call s:HL('cssColorProp', 'fg', '', 'none')
     call s:HL('cssBoxProp', 'fg', '', 'none')
@@ -536,6 +569,13 @@ call s:HL('lessVariable', 'lime', '', 'none')
 
 call s:HL('lispyscriptDefMacro', 'lime', '', '')
 call s:HL('lispyscriptRepeat', 'dress', '', 'none')
+
+" }}}
+" REPLs {{{
+" This isn't a specific plugin, but just useful highlight classes for anything
+" that might want to use them.
+
+call s:HL('replPrompt', 'tardis', '', 'bold')
 
 " }}}
 " Mail {{{
