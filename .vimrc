@@ -169,7 +169,7 @@ exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
 set background=dark
-colorscheme ir_black
+colorscheme badwolf
 
 " }}}
 
@@ -188,19 +188,9 @@ let mapleader=","
 let maplocalleader=","
 
 inoremap jk <esc>
-" cnoremap jk <esc>
-
-" Train self to avoid <Esc> key.
-inoremap <esc> <nop>
-" cnoremap <esc> <nop>
 
 nnoremap j gj
 nnoremap k gk
-" Hard mode
-" nnoremap h <Nop>
-" nnoremap j <Nop>
-" nnoremap k <Nop>
-" nnoremap l <Nop>
 
 map Y y$
 
@@ -368,7 +358,7 @@ nnoremap <Leader>fn "=expand("%:t:r:r")<CR>p
 
 " Hilights {{{
 
-hi Normal ctermbg=NONE
+" hi Normal ctermbg=NONE guibg=NONE
 
 " }}}
 
