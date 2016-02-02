@@ -209,6 +209,8 @@ nnoremap <Leader>ee :drop <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <Leader>eg :e $MYGVIMRC<CR>
 nnoremap <Leader>ev :e $MYVIMRC<CR>
 
+nnoremap ' `
+
 " }}}
 
 " Autocommand settings {{{
