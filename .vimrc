@@ -1,46 +1,41 @@
-set nocompatible
-filetype off
+" Plug {{{
 
-" Vundle {{{
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
   " General plugins {{{
 
-  Plugin 'VundleVim/Vundle.vim'
-
-  Plugin 'Raimondi/delimitMate'
-  Plugin 'SirVer/ultisnips'
-  Plugin 'bling/vim-airline'
-  Plugin 'editorconfig/editorconfig-vim'
-  Plugin 'godlygeek/tabular'
-  Plugin 'kien/ctrlp.vim'
-  Plugin 'majutsushi/tagbar'
-  Plugin 'matchit.zip', {'name': 'matchit'}
-  Plugin 'mileszs/ack.vim'
-  Plugin 'nathanaelkane/vim-indent-guides'
-  Plugin 'scrooloose/nerdtree'
-  Plugin 'scrooloose/syntastic'
-  Plugin 'tpope/vim-commentary'
-  Plugin 'tpope/vim-endwise'
-  Plugin 'tpope/vim-fugitive'
-  Plugin 'tpope/vim-repeat'
-  Plugin 'tpope/vim-surround'
-  Plugin 'tpope/vim-unimpaired'
-  Plugin 'wellle/targets.vim'
+  Plug 'Raimondi/delimitMate'
+  Plug 'SirVer/ultisnips'
+  Plug 'bling/vim-airline'
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'godlygeek/tabular'
+  Plug 'kien/ctrlp.vim'
+  Plug 'majutsushi/tagbar'
+  Plug 'matchit.zip', {'name': 'matchit'}
+  Plug 'mileszs/ack.vim'
+  Plug 'nathanaelkane/vim-indent-guides'
+  Plug 'scrooloose/nerdtree'
+  Plug 'scrooloose/syntastic'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-endwise'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-unimpaired'
+  Plug 'wellle/targets.vim'
+  Plug 'Shougo/neocomplete'
 
   " }}}
 
   " PHP {{{
 
-  Plugin 'shawncplus/phpcomplete.vim'
-  Plugin 'arnaud-lb/vim-php-namespace'
-  Plugin 'vim-php/tagbar-phpctags.vim'
+  Plug 'shawncplus/phpcomplete.vim'
+  Plug 'arnaud-lb/vim-php-namespace'
+  Plug 'vim-php/tagbar-phpctags.vim'
 
     " Drupal {{{
 
-    Plugin 'dsdeiz/vim-drupal-snippets'
+    Plug 'dsdeiz/vim-drupal-snippets'
 
     " }}}
 
@@ -48,13 +43,13 @@ call vundle#begin()
 
   " Javascript {{{
 
-  Plugin 'othree/javascript-libraries-syntax.vim'
-  Plugin 'jelera/vim-javascript-syntax'
-  Plugin 'marijnh/tern_for_vim'
+  Plug 'othree/javascript-libraries-syntax.vim'
+  Plug 'jelera/vim-javascript-syntax'
+  Plug 'marijnh/tern_for_vim'
 
     " Typescript {{{
 
-    Plugin 'leafgarland/typescript-vim'
+    Plug 'leafgarland/typescript-vim'
 
     " }}}
 
@@ -62,20 +57,20 @@ call vundle#begin()
 
   " HTML {{{
 
-  Plugin 'mattn/emmet-vim'
+  Plug 'mattn/emmet-vim'
 
   " }}}
 
   " Markdown {{{
 
-  Plugin 'plasticboy/vim-markdown'
+  Plug 'plasticboy/vim-markdown'
 
   " }}}
 
   " CSS {{{
 
     " Stylus {{{
-    Plugin 'wavded/vim-stylus'
+    Plug 'wavded/vim-stylus'
 
     " }}}
 
@@ -83,15 +78,11 @@ call vundle#begin()
 
   " Rust {{{
 
-  Plugin 'rust-lang/rust.vim'
+  Plug 'rust-lang/rust.vim'
 
   " }}}
 
-" }}}
-
-call vundle#end()
-
-filetype plugin indent on
+call plug#end()
 
 " }}}
 
