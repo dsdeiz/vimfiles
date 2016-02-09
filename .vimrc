@@ -88,6 +88,9 @@ call plug#end()
 
 " Basic settings {{{
 
+set nocompatible
+filetype plugin indent on
+
 syntax on
 
 set t_Co=256
@@ -265,6 +268,8 @@ autocmd BufRead PULLREQ_EDITMSG set tw=0
   " }}}
 
   " Tabularize {{{
+  "
+  " @todo Add this to .vim/after/plugin/TabularMaps.vim
 
   nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
   vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
@@ -328,6 +333,16 @@ autocmd BufRead PULLREQ_EDITMSG set tw=0
   " {{{
 
   let g:airline_powerline_fonts=1
+
+  " }}}
+
+  " Neocomplete {{{
+
+  " let g:neocomplete#enable_at_startup=1
+  " let g:neocomplete#enable_auto_select=0
+  " let g:neocomplete#disable_auto_complete=1
+
+  " inoremap <expr> <Tab> pumvisible() ? "\<Tab>" : neocomplete#start_manual_complete()
 
   " }}}
 
