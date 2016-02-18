@@ -6,7 +6,7 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'Raimondi/delimitMate'
   Plug 'SirVer/ultisnips'
-  Plug 'bling/vim-airline'
+  Plug 'vim-airline/vim-airline'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'godlygeek/tabular'
   Plug 'kien/ctrlp.vim'
@@ -24,6 +24,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-unimpaired'
   Plug 'wellle/targets.vim'
   Plug 'Shougo/neocomplete'
+  Plug 'joonty/vdebug', { 'for': 'php' }
 
   " }}}
 
@@ -163,7 +164,7 @@ exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
 set background=dark
-colorscheme alduin
+colorscheme ir_black
 
 " }}}
 
@@ -366,7 +367,7 @@ nnoremap <Leader>fn "=expand("%:t:r:r")<CR>p
 
 " Hilights {{{
 
-" hi Normal ctermbg=NONE guibg=NONE
+hi Normal ctermbg=NONE guibg=NONE
 
 " }}}
 
