@@ -4,3 +4,4 @@ session.vim
 .netrwhist
 *~
 .vim/plugged
+.vim/tmp
