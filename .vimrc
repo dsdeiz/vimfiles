@@ -94,8 +94,6 @@ filetype plugin indent on
 
 syntax on
 
-set t_Co=256
-
 set backspace=indent,eol,start
 set vb t_vb=
 set mouse=a
@@ -136,6 +134,11 @@ set history=1000
 
 set switchbuf=useopen
 
+set undofile
+set undodir=$HOME/.vim/tmp/undodir
+
+set directory=$HOME/.vim/tmp/swap
+
 set wrap
 " set linebreak
 " set breakindent
@@ -164,7 +167,7 @@ exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
 set background=dark
-colorscheme distinguished
+colorscheme badwolf
 
 " }}}
 
