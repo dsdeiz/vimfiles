@@ -6,7 +6,7 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'Raimondi/delimitMate'
   Plug 'SirVer/ultisnips'
-  Plug 'vim-airline/vim-airline'
+  Plug 'itchyny/lightline.vim'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'godlygeek/tabular'
   Plug 'kien/ctrlp.vim'
@@ -83,6 +83,12 @@ call plug#begin('~/.vim/plugged')
 
   " }}}
 
+  " {{{
+
+  Plug 'morhetz/gruvbox'
+
+  " }}}
+
 call plug#end()
 
 " }}}
@@ -135,7 +141,7 @@ set history=1000
 set switchbuf=useopen
 
 set undofile
-set undodir=$HOME/.vim/tmp/undodir
+set undodir=$HOME/.vim/tmp/undo
 
 set directory=$HOME/.vim/tmp/swap
 
@@ -167,7 +173,9 @@ exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
 set background=dark
-colorscheme badwolf
+
+colorscheme gruvbox
+let g:gruvbox_contrast_dark="hard"
 
 " }}}
 
@@ -334,9 +342,59 @@ autocmd BufRead PULLREQ_EDITMSG set tw=0
 
   " }}}
 
-  " {{{
+  " Airline {{{
 
   let g:airline_powerline_fonts=1
+
+  " }}}
+
+  " Lightline {{{
+
+  let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'filename' ] ]
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'LightLineFugitive',
+      \   'readonly': 'LightLineReadonly',
+      \   'modified': 'LightLineModified',
+      \   'filename': 'LightLineFilename'
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
+
+  function! LightLineModified()
+    if &filetype == "help"
+      return ""
+    elseif &modified
+      return "+"
+    elseif &modifiable
+      return ""
+    else
+      return ""
+    endif
+  endfunction
+
+  function! LightLineReadonly()
+    if &filetype == "help"
+      return ""
+    elseif &readonly
+      return ''
+    else
+      return ""
+    endif
+  endfunction
+
+  function! LightLineFugitive()
+    if exists("*fugitive#head")
+      let _ = fugitive#head()
+      return strlen(_) ? ''._ : ''
+    endif
+    return ''
+  endfunction
 
   " }}}
 
