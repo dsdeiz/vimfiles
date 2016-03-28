@@ -351,7 +351,7 @@ autocmd BufRead PULLREQ_EDITMSG set tw=0
   " Lightline {{{
 
   let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'filename' ] ]
