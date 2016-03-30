@@ -396,6 +396,12 @@ autocmd BufRead PULLREQ_EDITMSG set tw=0
     return ''
   endfunction
 
+  function! LightLineFilename()
+    return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+          \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+          \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+  endfunction
+
   " }}}
 
   " Neocomplete {{{
