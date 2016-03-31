@@ -305,7 +305,9 @@ autocmd BufRead PULLREQ_EDITMSG set tw=0
   " Ignore *.png, *.gif, *.jpg, and *.jpeg files.
   " let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files | grep -v "\.\(png\|gif|jp\(e\)\?g\)\$"', 'find -L %s -type f | grep -v "\.jpg$"']
   " let g:ctrlp_user_command = 'find -L %s -type f -not -path "sites/default/vendor" | grep -v "\.\(png\|gif|jp\(e\)\?g\)\$"'
-  let g:ctrlp_user_command = 'ag -f %s -l --nocolor -g "" --ignore="*.png" --ignore="*.jpeg" --ignore="*.jpg" --ignore="*.gif"'
+
+  " Fix me! :(
+  let g:ctrlp_user_command = 'ag -f %s -l --nocolor -g "" --ignore="*.png" --ignore="*.jpeg" --ignore="*.jpg" --ignore="*.gif" --ignore="sites/default/files" --ignore="sites/default/vendor"'
 
   " }}}
 
