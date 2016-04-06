@@ -9,7 +9,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'itchyny/lightline.vim'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'godlygeek/tabular'
-  Plug 'kien/ctrlp.vim'
+  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'majutsushi/tagbar'
   Plug 'matchit.zip', {'name': 'matchit'}
   Plug 'mileszs/ack.vim'
