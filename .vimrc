@@ -149,6 +149,13 @@ set wrap
 " set linebreak
 " set breakindent
 
+" @todo: Check if this can be removed when upgrading to tmux 2.3.
+if empty($TMUX)
+  set termguicolors
+  " set t_8f=[38:2:%lu:%lu:%lum
+  " set t_8b=[48:2:%lu:%lu:%lum
+endif
+
 " }}}
 
 " Layout settings {{{
@@ -174,7 +181,7 @@ set textwidth=80
 
 set background=dark
 
-colorscheme gruvbox
+colorscheme molokai
 let g:gruvbox_contrast_dark="hard"
 
 " }}}
@@ -353,7 +360,6 @@ autocmd BufRead PULLREQ_EDITMSG set tw=0
   " Lightline {{{
 
   let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'filename' ] ]
