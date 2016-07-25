@@ -23,7 +23,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-unimpaired'
   Plug 'wellle/targets.vim'
-  Plug 'Shougo/neocomplete'
   Plug 'joonty/vdebug', { 'for': 'php' }
 
   " }}}
@@ -47,6 +46,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'othree/javascript-libraries-syntax.vim'
   Plug 'jelera/vim-javascript-syntax'
   Plug 'marijnh/tern_for_vim'
+  Plug 'posva/vim-vue'
 
     " Typescript {{{
 
@@ -58,7 +58,7 @@ call plug#begin('~/.vim/plugged')
 
   " HTML {{{
 
-  Plug 'mattn/emmet-vim'
+  Plug 'mattn/emmet-vim', { 'for': 'html' }
 
   " }}}
 
@@ -83,9 +83,10 @@ call plug#begin('~/.vim/plugged')
 
   " }}}
 
-  " {{{
+  " Colors {{{
 
   Plug 'morhetz/gruvbox'
+  Plug 'NLKNguyen/papercolor-theme'
 
   " }}}
 
@@ -149,11 +150,13 @@ set wrap
 " set linebreak
 " set breakindent
 
-" @todo: Check if this can be removed when upgrading to tmux 2.3.
-if empty($TMUX)
+if has('termguicolors')
   set termguicolors
-  " set t_8f=[38:2:%lu:%lu:%lum
-  " set t_8b=[48:2:%lu:%lu:%lum
+
+  if &term =~# 'screen-256color'
+    let &t_8f="\e[38;2;%ld;%ld;%ldm"
+    let &t_8b="\e[48;2;%ld;%ld;%ldm"
+  endif
 endif
 
 " }}}
@@ -445,5 +448,10 @@ nnoremap <Leader>fn "=expand("%:t:r:r")<CR>p
 hi Normal ctermbg=NONE guibg=NONE
 
 " }}}
+
+" For presentations.
+" let g:lightline = { 'colorscheme' : 'PaperColor' }
+" set background=light
+" colorscheme PaperColor
 
 " vim: foldmethod=marker
