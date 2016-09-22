@@ -31,7 +31,6 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'shawncplus/phpcomplete.vim'
   Plug 'arnaud-lb/vim-php-namespace'
-  Plug 'vim-php/tagbar-phpctags.vim'
 
     " Drupal {{{
 
