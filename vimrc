@@ -24,6 +24,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-unimpaired'
   Plug 'wellle/targets.vim'
   Plug 'joonty/vdebug', { 'for': 'php' }
+  Plug 'tpope/vim-eunuch'
 
   " }}}
 
