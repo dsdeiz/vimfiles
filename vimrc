@@ -25,6 +25,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'wellle/targets.vim'
   Plug 'joonty/vdebug', { 'for': 'php' }
   Plug 'tpope/vim-eunuch'
+  Plug 'lepture/vim-jinja'
+  Plug 'lifepillar/vim-mucomplete'
 
   " }}}
 
@@ -32,6 +34,7 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'shawncplus/phpcomplete.vim'
   Plug 'arnaud-lb/vim-php-namespace'
+  Plug '2072/PHP-Indenting-for-VIm'
 
     " Drupal {{{
 
@@ -58,7 +61,7 @@ call plug#begin('~/.vim/plugged')
 
   " HTML {{{
 
-  Plug 'mattn/emmet-vim', { 'for': 'html' }
+  Plug 'mattn/emmet-vim', { 'for': ['html, jinja'] }
 
   " }}}
 
@@ -179,6 +182,8 @@ set complete-=b
 set complete-=u
 set complete-=w
 set completeopt-=preview
+set completeopt+=menu,menuone
+set infercase
 exec "set path=.,," . getcwd() . "/**"
 set textwidth=80
 
@@ -422,6 +427,13 @@ autocmd BufRead PULLREQ_EDITMSG set tw=0
   " let g:neocomplete#disable_auto_complete=1
 
   " inoremap <expr> <Tab> pumvisible() ? "\<Tab>" : neocomplete#start_manual_complete()
+
+  " }}}
+
+  " MUcomplete {{{
+
+  imap <c-n> <plug>(MUcompleteFwd)
+  imap <c-p> <plug>(MUcompleteBwd)
 
   " }}}
 
