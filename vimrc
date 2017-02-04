@@ -15,7 +15,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'mileszs/ack.vim'
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'scrooloose/nerdtree'
-  Plug 'scrooloose/syntastic'
+  " Plug 'scrooloose/syntastic'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
@@ -27,6 +27,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-eunuch'
   Plug 'lepture/vim-jinja'
   Plug 'lifepillar/vim-mucomplete'
+  Plug 'w0rp/ale'
 
   " }}}
 
@@ -61,7 +62,7 @@ call plug#begin('~/.vim/plugged')
 
   " HTML {{{
 
-  Plug 'mattn/emmet-vim', { 'for': ['html, jinja'] }
+  Plug 'mattn/emmet-vim', { 'for': ['html', 'jinja'] }
 
   " }}}
 
@@ -90,6 +91,7 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'morhetz/gruvbox'
   Plug 'NLKNguyen/papercolor-theme'
+  Plug 'fneu/breezy'
 
   " }}}
 
@@ -190,7 +192,7 @@ set textwidth=80
 set background=dark
 
 colorscheme molokai
-let g:gruvbox_contrast_dark="hard"
+" let g:gruvbox_contrast_dark="hard"
 
 " }}}
 
@@ -277,6 +279,12 @@ autocmd BufRead PULLREQ_EDITMSG set tw=0
 
   " Allow jumping between errors on buffers.
   let g:syntastic_always_populate_loc_list=1
+
+  " }}}
+
+  " ALE {{{
+
+  let g:ale_linters= {'php': ['php']}
 
   " }}}
 
