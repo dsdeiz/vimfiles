@@ -39,7 +39,7 @@ call plug#begin('~/.vim/plugged')
 
     " Drupal {{{
 
-    Plug 'dsdeiz/vim-drupal-snippets'
+    " Plug 'dsdeiz/vim-drupal-snippets'
 
     " }}}
 
