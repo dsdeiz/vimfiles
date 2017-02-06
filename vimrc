@@ -12,7 +12,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'majutsushi/tagbar'
   Plug 'matchit.zip', {'name': 'matchit'}
-  Plug 'mileszs/ack.vim'
+  " Plug 'mileszs/ack.vim'
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'scrooloose/nerdtree'
   " Plug 'scrooloose/syntastic'
@@ -28,6 +28,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'lepture/vim-jinja'
   Plug 'lifepillar/vim-mucomplete'
   Plug 'w0rp/ale'
+  Plug 'mhinz/vim-grepper'
 
   " }}}
 
@@ -288,11 +289,9 @@ autocmd BufRead PULLREQ_EDITMSG set tw=0
 
   " }}}
 
-  " Ack {{{
+  " Grepper {{{
 
-  " let g:ackprg="ack -H --nocolor --nogroup --column"
-  let g:ackprg="ag --nogroup --nocolor --column"
-  nnoremap <Leader>ag :Ack! 
+  nnoremap <Leader>ag :Grepper -tool ag<cr>
 
   " }}}
 
