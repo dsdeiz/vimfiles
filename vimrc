@@ -298,6 +298,7 @@ autocmd BufRead PULLREQ_EDITMSG set tw=0
   " Tagbar {{{
 
   nnoremap <Leader>t :TagbarToggle<CR>
+  let g:tagbar_left = 1
 
   " }}}
 
